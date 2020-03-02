@@ -1,0 +1,60 @@
+create table  student
+(
+id number(10),
+name varchar(20),
+salary number(6)
+);
+
+create table employee  // To create the table //
+(
+id number(10),
+name varchar(10),
+salary number(10,5),
+date_of_joining  date
+);
+
+
+select sysdate from dual  // To get the fprmat of date //
+ 
+insert into  employee   // To enter the value into the row of table  //
+(id,name,salary,date_of_joining)
+values(6,'Brijesh',5566.555,'15-JAN-20');
+
+desc table_name(employee)  //To see the structure of table //
+
+select * from table_name(employee)  // To view the whole table //
+
+select id,name from table_name;
+
+select * from table_name where name='Brijesh';  
+
+
+alter table table_name(employee) // To add coloumn to the table //
+ADD(mobile number(10));
+
+ 
+alter  table table_name     // To modify the property of coloumn of the table, We can increase the size of dataSize but cannot decrease the size //
+Modify(coloumn_name newDataType (newsize));
+ 
+ 
+update table_name(employee)    // To update the column from table //
+set mobile=9873454345 where name='Ankit' ;
+
+
+// ORDER BY //  by default it work in decrreasing order //
+
+select * from table_name(employee)
+order by coloumn_name asc/desc;
+
+//TO SE ALL THE CONSTRAINTS OF THE GIVEN TABLE
+
+select owner ,constraint_name,constraint_type from 
+USER_CONSTRAINTS where table_name='STUDENT';
+
+
+OWNER	CONSTRAINT_NAME	CON
+BTIT02	SYS_C005994	C
+BTIT02	SYS_C005995	P
+
+
+
